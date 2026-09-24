@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You are Invited!</title>
+<meta name="description" content="Today, just for you. Pick your two hours.">
+<meta name="theme-color" content="#A8D0E2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow" data-reveal>
+        <span class="rule"></span>
+        <span>Today, just for you</span>
+        <span class="rule"></span>
+      </div>
+      <h1 data-reveal data-delay="120">You are <em>Invited!</em></h1>
+      <p class="hero-sub" data-reveal data-delay="240">For <span data-her></span>, from <span data-from></span></p>
+      <div class="dots" data-reveal data-delay="360" aria-hidden="true">
+        <span class="dot dot-purple"></span>
+        <span class="dot dot-blue"></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="photos" aria-label="Our photos">
+    <div data-reveal>
+      <div class="film-wrap">
+        <div class="film film-a">
+          <div class="film-track" data-film="a"></div>
+        </div>
+        <div class="film film-b">
+          <div class="film-track" data-film="b"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="letter-section">
+    <article class="letter" data-reveal>
+      <div class="letter-frame" aria-hidden="true"></div>
+      <div class="letter-body">
+        <div class="letter-text">
+          <p class="salutation">Dear <span data-her></span>,</p>
+          <p>You’re invited to spend two hours with me today, online. Pick the two hours that suit you best below and I’ll be there, just the two of us.</p>
+          <p class="signoff">Yours, <span data-from></span></p>
+        </div>
+
+        <div class="details">
+          <div class="detail detail-purple">
+            <span class="detail-label">Date</span>
+            <span class="detail-value" id="today-label">Today</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Time</span>
+            <span class="detail-value">2 hours, your pick</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Place</span>
+            <span class="detail-value">Online</span>
+          </div>
+        </div>
+
+        <div class="rsvp">
+          <form id="rsvp-form" class="rsvp-pick" novalidate>
+            <span class="rsvp-heading" id="slots-heading">Choose your two hours</span>
+            <div class="slots" id="slots" role="group" aria-labelledby="slots-heading"></div>
+            <button type="submit" class="confirm" id="confirm" disabled>Pick a time above</button>
+            <p class="rsvp-error" id="rsvp-error" role="alert" hidden></p>
+          </form>
+
+          <div class="rsvp-done" id="rsvp-done" hidden>
+            <p class="done-title">See you then!</p>
+            <p class="done-text">Today, <span id="done-slot"></span>. I’ll send the link.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <footer class="footer"><span data-from></span> &amp; <span data-her></span></footer>
+</main>
+
+<dialog class="modal" id="confirm-modal" aria-labelledby="modal-title" aria-describedby="modal-text">
+  <div class="modal-card">
+    <div class="modal-dots" aria-hidden="true">
+      <span class="dot dot-purple"></span>
+      <span class="dot dot-blue"></span>
+    </div>
+    <h2 class="modal-title" id="modal-title">It’s a date!</h2>
+    <p class="modal-text" id="modal-text">Your time is locked in for today, <strong id="modal-slot"></strong>. <span data-from></span> just got your answer.</p>
+    <form method="dialog">
+      <button class="modal-close" autofocus>Can’t wait</button>
+    </form>
+  </div>
+</dialog>
+</body>
+</html>
